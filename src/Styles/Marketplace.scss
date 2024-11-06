@@ -1,0 +1,163 @@
+// Variables
+$primary-color: #1877f2;
+$secondary-color: #42b72a;
+$border-color: #ddd;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+.marketplace-page {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.marketplace-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.marketplace-header {
+  margin-bottom: 30px;
+  
+  h1 {
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  .filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    select, input {
+      padding: 10px;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      flex: 1;
+      max-width: 200px;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-image {
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid $border-color;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 20px;
+    }
+  }
+
+  .product-info {
+    padding: 20px;
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      color: #333;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $primary-color;
+      margin: 10px 0;
+    }
+
+    .category {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+
+    .description {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+
+      button {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: $transition;
+        font-weight: 500;
+
+        &.buy-button {
+          background: $primary-color;
+          color: white;
+
+          &:hover {
+            background: darken($primary-color, 5%);
+          }
+        }
+
+        &.cart-button {
+          background: $secondary-color;
+          color: white;
+
+          &:hover {
+            background: darken($secondary-color, 5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .marketplace-header .filters {
+    flex-direction: column;
+    
+    select, input {
+      max-width: 100%;
+    }
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}

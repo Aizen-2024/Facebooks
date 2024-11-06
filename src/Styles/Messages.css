@@ -1,0 +1,123 @@
+.messenger-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  min-height: 100vh;
+}
+.messenger-container .friend-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.messenger-container .friend-list .friend-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s;
+  border: 1px solid #dddfe2;
+}
+.messenger-container .friend-list .friend-item:hover {
+  background-color: #f0f2f5;
+}
+.messenger-container .friend-list .friend-item img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 12px;
+}
+.messenger-container .friend-list .friend-item h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  flex-grow: 1;
+}
+.messenger-container .friend-list .friend-item .message-button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: #f0f2f5;
+  color: #050505;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.messenger-container .friend-list .friend-item .message-button:hover {
+  background-color: #e4e6eb;
+}
+.messenger-container .friend-list .friend-item .message-button.active {
+  background-color: #0084ff;
+  color: white;
+}
+.messenger-container .friend-list .friend-item .message-button.active:hover {
+  background-color: #0077e6;
+}
+.messenger-container .input-container {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+}
+.messenger-container .input-container input {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #dddfe2;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+}
+.messenger-container .input-container input:focus {
+  border-color: #0084ff;
+}
+.messenger-container .input-container button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: #0084ff;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.messenger-container .input-container button:hover {
+  background-color: #0077e6;
+}
+.messenger-container .input-container button:disabled {
+  background-color: #e4e6eb;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .messenger-container {
+    padding: 12px;
+  }
+  .messenger-container .friend-list .friend-item {
+    padding: 8px;
+  }
+  .messenger-container .friend-list .friend-item img {
+    width: 40px;
+    height: 40px;
+  }
+  .messenger-container .friend-list .friend-item h3 {
+    font-size: 14px;
+  }
+  .messenger-container .friend-list .friend-item .message-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .messenger-container .input-container {
+    padding: 8px;
+  }
+  .messenger-container .input-container input {
+    padding: 8px;
+  }
+  .messenger-container .input-container button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=Messages.css.map */

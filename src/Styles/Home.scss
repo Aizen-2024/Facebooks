@@ -1,0 +1,114 @@
+$primary-color: #1a73e8;
+$secondary-color: #626262;
+$border-color: #e0e0e0;
+$hover-color: #f5f5f5;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$comment-bg: #f8f9fa;
+$comment-border: #dee2e6;
+
+.home_container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#post {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: $shadow;
+  border: 1px solid $border-color;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+
+  p {
+    line-height: 1.6;
+    color: $secondary-color;
+    margin-bottom: 1rem;
+  }
+
+  span {
+    display: inline-block;
+    background: $hover-color;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin: 0 0.5rem 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 1rem 0.5rem 0;
+    border: none;
+    border-radius: 4px;
+    background: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 1rem 0;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.comments-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid $border-color;
+}
+
+.comment-item {
+  background: $comment-bg;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid $comment-border;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateX(4px);
+  }
+
+  h2 {
+    font-size: 1rem;
+    color: $secondary-color;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid $comment-border;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::after {
+      content: attr(timestamp);
+      font-size: 0.8rem;
+      color: lighten($secondary-color, 20%);
+    }
+  }
+}

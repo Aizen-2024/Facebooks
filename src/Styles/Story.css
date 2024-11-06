@@ -1,0 +1,12 @@
+.Story_container {
+  border: 3px solid blue;
+  display: inline-block;
+}
+.Story_container #story img {
+  height: 9rem;
+  width: 7rem;
+}
+.Story_container #story h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: comic;
+}/*# sourceMappingURL=Story.css.map */

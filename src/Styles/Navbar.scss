@@ -1,0 +1,130 @@
+
+$nav-height: 70px;
+$icon-size: 40px;
+$icon-hover-size: 45px;
+$spacing: 20px;
+$transition-speed: 0.2s;
+$primary-color: #1877f2;
+$hover-bg: #f0f2f5;
+$border-color: #dddfe2;
+
+.Navbar_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $nav-height;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 $spacing;
+  z-index: 1000;
+  border-bottom: 1px solid $border-color;
+
+  #logo {
+    flex-shrink: 0;
+    padding-right: $spacing * 2;
+
+    img {
+      height: 40px;
+      width: auto;
+      transition: transform $transition-speed ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  #nav_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: $spacing;
+
+    a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $spacing/2;
+      border-radius: 8px;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background-color: $hover-bg;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $primary-color;
+          border-radius: 2px;
+        }
+
+        img {
+          width: $icon-hover-size;
+          height: $icon-hover-size;
+        }
+      }
+
+      img {
+        width: $icon-size;
+        height: $icon-size;
+        transition: all $transition-speed ease;
+      }
+    }
+  }
+}
+
+
+.page-content {
+  margin-top: $nav-height; 
+  padding: $spacing;
+  min-height: calc(100vh - $nav-height); 
+  background-color: #f0f2f5; 
+}
+
+
+@media (max-width: 768px) {
+  .Navbar_container {
+    padding: 0 $spacing/2;
+
+    #nav_bar {
+      gap: $spacing/2;
+
+      a {
+        padding: $spacing/4;
+
+        img {
+          width: $icon-size * 0.8;
+          height: $icon-size * 0.8;
+
+          &:hover {
+            width: $icon-hover-size * 0.8;
+            height: $icon-hover-size * 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .Navbar_container {
+    #logo {
+      display: none;
+    }
+
+    #nav_bar {
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+}

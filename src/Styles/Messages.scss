@@ -1,0 +1,153 @@
+$primary-color: #0084ff;
+$secondary-color: #f0f2f5;
+$text-color: #050505;
+$border-color: #dddfe2;
+$hover-color: #e4e6eb;
+
+.messenger-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  min-height: 100vh;
+  
+  .friend-list {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    .friend-item {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: background-color 0.2s;
+      border: 1px solid $border-color;
+      
+      &:hover {
+        background-color: $secondary-color;
+      }
+      
+      img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px;
+      }
+      
+      h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        flex-grow: 1;
+      }
+      
+      .message-button {
+        padding: 8px 16px;
+        border-radius: 20px;
+        border: none;
+        background-color: $secondary-color;
+        color: $text-color;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        
+        &:hover {
+          background-color: $hover-color;
+        }
+        
+        &.active {
+          background-color: $primary-color;
+          color: white;
+          
+          &:hover {
+            background-color: darken($primary-color, 5%);
+          }
+        }
+      }
+    }
+  }
+  
+  .input-container {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: $secondary-color;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    
+    input {
+      flex-grow: 1;
+      padding: 12px;
+      border: 1px solid $border-color;
+      border-radius: 20px;
+      font-size: 14px;
+      outline: none;
+      
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+    
+    button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      background-color: $primary-color;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      
+      &:hover {
+        background-color: darken($primary-color, 5%);
+      }
+      
+      &:disabled {
+        background-color: $hover-color;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Add some responsive styles
+@media (max-width: 768px) {
+  .messenger-container {
+    padding: 12px;
+    
+    .friend-list {
+      .friend-item {
+        padding: 8px;
+        
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        
+        h3 {
+          font-size: 14px;
+        }
+        
+        .message-button {
+          padding: 6px 12px;
+          font-size: 14px;
+        }
+      }
+    }
+    
+    .input-container {
+      padding: 8px;
+      
+      input {
+        padding: 8px;
+      }
+      
+      button {
+        padding: 6px 12px;
+        font-size: 14px;
+      }
+    }
+  }
+}
